@@ -4,6 +4,9 @@
   "description": "Teste de react e typescript",
   "main": "index.js",
   "scripts": {
+    "start:server": "webpack-dev-server --content-base ./dist --hot --inline --colors --port 3000 --open",
+    "build": "webpack --config webpack.config.js --watch",
+    "start": "mkdir -p dist && cp -rf index.html ./dist/ && npm run build | npm run start:server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -17,6 +20,8 @@
   "devDependencies": {
     "awesome-typescript-loader": "^3.2.3",
     "source-map-loader": "^0.2.1",
-    "typescript": "^2.4.2"
+    "typescript": "^2.4.2",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
   }
 }
